@@ -1,2 +1,2 @@
-# ShoppyGlobe
-basic e-commerce
+# ShoppyGlobe 
+E-commerce Application
