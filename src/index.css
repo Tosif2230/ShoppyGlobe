@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* font famaly poppins import */
+*{
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
