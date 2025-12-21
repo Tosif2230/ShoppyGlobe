@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <header className="w-full sticky top-0 z-50">
+    <header className="w-full sticky top-0 z-50 ">
       {/* Amazon like Header */}
 
       {/* Top Navbar */}
@@ -29,7 +29,7 @@ function Header() {
         {/* Cart */}
         <div className="flex items-center cursor-pointer">
           🛒
-          <span className="font-bold ml-1">Cart</span>
+          <span className="font-bold ml-2">Cart</span>
         </div>
       </div>
 
