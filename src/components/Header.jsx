@@ -36,13 +36,10 @@ function Header() {
       {/* Bottom Navbar */}
       <div className="bg-[#232f3e] text-white text-sm px-5 py-2 flex items-center gap-8 overflow-x-auto">
         <span className="font-bold cursor-pointer">☰ All</span>
-        <span className="cursor-pointer whitespace-nowrap">Product</span>
-        <span className="cursor-pointer whitespace-nowrap">Product</span>
-        <span className="cursor-pointer whitespace-nowrap">Product</span>
-        <span className="cursor-pointer whitespace-nowrap">Product</span>
-        <span className="cursor-pointer whitespace-nowrap">Product</span>
-        <span className="cursor-pointer whitespace-nowrap">Product</span>
-        <span className="cursor-pointer whitespace-nowrap">Product</span>
+        <span className="cursor-pointer whitespace-nowrap">Beauty</span>
+        <span className="cursor-pointer whitespace-nowrap">Fragrances</span>
+        <span className="cursor-pointer whitespace-nowrap">Furniture</span>
+        <span className="cursor-pointer whitespace-nowrap">Groceries</span>
       </div>
     </header>
   );
