@@ -24,6 +24,10 @@ const routes = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path: "/category/:categoryName",
+        element: <ProductList />,
+      },
     ],
     errorElement: <NotFound />,
   },

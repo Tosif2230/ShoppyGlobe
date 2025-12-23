@@ -16,8 +16,8 @@ const ProductItem = ({ product }) => {
         <h2 className="mt-4 text-lg font-semibold">
           {title?.substring(0,25)}
         </h2>
-
         <p className="text-sm mt-1 text-gray-600 mb-3">{description?.substring(0,130)}</p>
+        <p className="text-sm text-gray-600">Availability: {product.availabilityStatus}</p>
 
         <div className="flex justify-between items-center mb-4 mt-auto">
           <div className="flex items-center gap-1">

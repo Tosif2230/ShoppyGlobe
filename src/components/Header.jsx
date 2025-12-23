@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -35,11 +36,11 @@ function Header() {
 
       {/* Bottom Navbar */}
       <div className="bg-[#232f3e] text-white text-sm px-5 py-2 flex items-center gap-8 overflow-x-auto">
-        <span className="font-bold cursor-pointer">☰ All</span>
-        <span className="cursor-pointer whitespace-nowrap">Beauty</span>
-        <span className="cursor-pointer whitespace-nowrap">Fragrances</span>
-        <span className="cursor-pointer whitespace-nowrap">Furniture</span>
-        <span className="cursor-pointer whitespace-nowrap">Groceries</span>
+        <Link to="/"><span className="font-bold cursor-pointer">☰ All</span></Link>
+        <Link to="/category/beauty"><span className="cursor-pointer whitespace-nowrap">Beauty</span></Link>
+        <Link to="/category/fragrances"><span className="cursor-pointer whitespace-nowrap">Fragrances</span></Link>
+        <Link to="/category/furniture"><span className="cursor-pointer whitespace-nowrap">Furniture</span></Link>
+        <Link to="/category/groceries"><span className="cursor-pointer whitespace-nowrap">Groceries</span></Link>
       </div>
     </header>
   );

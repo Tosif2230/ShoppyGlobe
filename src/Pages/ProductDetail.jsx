@@ -14,7 +14,7 @@ function ProductDetail() {
   if (error) {
     return <p className="text-center mt-10">Error in Loading..{error.message}</p>;
   }
-  // console.log(product)
+  console.log(product)
   return (
     <div className="flex gap-6 m-4 p-4 rounded-lg">
       {/* Image Section */}
@@ -27,7 +27,7 @@ function ProductDetail() {
         <h1 className="text-2xl font-semibold">{product.title}</h1>
         <p className="font-medium">Brand: {product.brand}</p>
         <p className="font-medium">Category: {product.category}</p>
-        <p className="text-sm text-gray-600">Stock: {product.availabilityStatus}</p>
+        <p className="text-sm text-gray-600">Availability: {product.availabilityStatus}</p>
 
         {/*Rating*/}
         <div className="flex items-center gap-1 mt-2">
