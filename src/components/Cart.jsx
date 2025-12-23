@@ -27,7 +27,7 @@ function Cart() {
             <h1 className="text-xl">Cat Food</h1>
             <p className="text-gray-600">High quality pet food</p>
 
-            <div className="flex items-center  rounded bg-amber-300 w-fit px-2 gap-3 border">
+            <div className="flex items-center  rounded text-white bg-cyan-500 w-fit px-2 gap-3 border">
               <button onClick={() => setCount(Math.max(0, count - 1))}>
                 -
               </button>
@@ -58,9 +58,10 @@ function Cart() {
           <span className="font-semibold mx-1">${totalPrice}</span>
         </h1>
 
-        <button className="rounded-2xl bg-amber-300 shadow-sm cursor-pointer py-1 mb-5">
+        <button className="rounded-2xl text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer py-1 mb-5">
           CheckOut
         </button>
+        
 
         <label
           className="text-sm border p-2 flex justify-between rounded"

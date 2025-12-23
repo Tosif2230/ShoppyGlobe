@@ -3,7 +3,7 @@ import ProductItem from "./ProductItem";
 import useFetchProduct from "../Hooks/useFetchProduct";
 
 function ProductList() {
-  const { products, error, loading } = useFetchProduct(
+  const { product, error, loading } = useFetchProduct(
     "https://dummyjson.com/products"
   );
   if (loading) {
@@ -15,7 +15,7 @@ function ProductList() {
   }
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 m-2">
-          {products.map((product) => (
+          {product.products.map((product) => (
             <ProductItem key={product.id} product={product} />
           ))}
         </div>

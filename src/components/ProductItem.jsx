@@ -7,17 +7,17 @@ const ProductItem = ({ product }) => {
   return (
     <div className="h-full">
       <div className="flex flex-col h-full rounded-xl p-4 shadow-sm">
-        <Link to={`/products/${id}`}>
+        <Link to={`/product/${id}`}>
           <figure>
-            <img className="h-48 w-full object-cover rounded-lg" src={images[0]} alt={title} loading="lazy" />
+            <img className="h-48 w-full object-cover rounded-lg" src={images?.[0]} alt={title} loading="lazy" />
           </figure>
         </Link>
 
         <h2 className="mt-4 text-lg font-semibold">
-          {title.substring(0,25)}
+          {title?.substring(0,25)}
         </h2>
 
-        <p className="text-sm mt-1 text-gray-600 mb-3">{description.substring(0,130)}</p>
+        <p className="text-sm mt-1 text-gray-600 mb-3">{description?.substring(0,130)}</p>
 
         <div className="flex justify-between items-center mb-4 mt-auto">
           <div className="flex items-center gap-1">

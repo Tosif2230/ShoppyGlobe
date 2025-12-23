@@ -10,7 +10,7 @@ function NotFound() {
       <h1 className='text-9xl  mt-5'>{err.status}</h1>
       <h2 className='text-4xl mt-5'>{err.error.message}</h2>
       <h3 className='text-4xl mt-5'>{err.statusText}</h3>
-      <button type="button" class="rounded-xl m-5 text-white bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">Back to Home</button>
+      <button type="button" className="rounded-xl m-5 text-white bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">Back to Home</button>
 
     </div>
   )
