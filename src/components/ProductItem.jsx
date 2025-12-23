@@ -14,12 +14,12 @@ const ProductItem = ({ product }) => {
         </Link>
 
         <h2 className="mt-4 text-lg font-semibold">
-          {title}
+          {title.substring(0,25)}
         </h2>
 
-        <p className="text-sm text-gray-600 mb-3">{description.substring(0,130)}</p>
+        <p className="text-sm mt-1 text-gray-600 mb-3">{description.substring(0,130)}</p>
 
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-4 mt-auto">
           <div className="flex items-center gap-1">
           <svg
             className="w-5 h-5 text-yellow-400"
