@@ -28,10 +28,10 @@ function Header() {
         </div>
 
         {/* Cart */}
-        <div className="flex items-center cursor-pointer">
+        <Link to="/cart"><div className="flex items-center cursor-pointer">
           🛒
           <span className="font-bold ml-2">Cart</span>
-        </div>
+        </div></Link>
       </div>
 
       {/* Bottom Navbar */}
