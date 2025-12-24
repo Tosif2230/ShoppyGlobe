@@ -1,8 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useFetchProduct from "../Hooks/useFetchProduct";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 function ProductDetail() {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const { product, error, loading } = useFetchProduct(
     `https://dummyjson.com/products/${id}`
@@ -59,6 +62,7 @@ function ProductDetail() {
 
         <button
           type="button"
+          onClick={()=>dispatch(addItem(product))}
           className="m-1 p-1 cursor-pointer rounded-2xl text-sm text-white bg-cyan-500 hover:bg-cyan-600"
         >
           ADD TO CART
