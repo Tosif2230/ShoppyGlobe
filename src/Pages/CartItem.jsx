@@ -1,7 +1,9 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { decrement, increment, removeItem } from "../utils/cartSlice";
 
 function CartItem({ item }) {
-
+  const dispatch = useDispatch();
   const { id, price ,title, images, description, quantity } = item;
 
   return (
@@ -23,13 +25,14 @@ function CartItem({ item }) {
 
           {/* Quantity buttons */}
           <div className="flex items-center rounded text-white bg-cyan-500 w-fit px-2 gap-3">
-            <button>-</button>
+            <button onClick={()=>dispatch(decrement(id))}>-</button>
             <h2>{quantity}</h2>
-            <button>+</button>
+            <button onClick={()=>dispatch(increment(id))}>+</button>
           </div>
 
           {/* Delete */}
           <button
+            onClick={()=>dispatch(removeItem(id))}
             className="cursor-pointer mt-2 text-gray-400 w-fit"
           >
             Delete
@@ -38,7 +41,7 @@ function CartItem({ item }) {
 
         {/* Price */}
         <div className="ml-auto font-semibold mx-1">
-          $ {Price}
+          $ {price * quantity}
         </div>
       </section>
 

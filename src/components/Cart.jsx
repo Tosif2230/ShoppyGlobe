@@ -5,6 +5,10 @@ import CartItem from "../Pages/CartItem";
 function Cart() {
   const cartItems = useSelector((state) => state.cart.items);
 
+  const totalQuantity = cartItems.reduce( (total ,item) => total + item.quantity , 0);
+
+  const totalPrice = cartItems.reduce( (total ,item) => total + item.price * item.quantity , 0);
+
   return (
     <div className="flex mt-5 justify-between gap-4 shadow-lg">
       {/* Cart Items */}
@@ -26,9 +30,9 @@ function Cart() {
 
         <div className="flex justify-end">
           <h1>
-            Subtotal (Items):
+            Subtotal ({totalQuantity} Items):
             <span className="font-semibold mx-1">
-              ${}
+              ${totalPrice.toFixed(2)}
             </span>
           </h1>
         </div>
@@ -37,9 +41,9 @@ function Cart() {
       {/* Cart Summary */}
       <section className="shadow-lg w-[20vw] p-4 flex flex-col gap-3">
         <h1>
-          Subtotal (Items):
+          Subtotal ({totalQuantity} Items):
           <span className="font-semibold mx-1">
-            ${}
+            ${totalPrice.toFixed(2)}
           </span>
         </h1>
 

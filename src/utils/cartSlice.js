@@ -8,25 +8,37 @@ const cartSlice = createSlice({
   reducers: {
     // Add item to cart
     addItem: (state, action) => {
-     state.items.push(action.payload);
+     const item = action.payload;
+     const existingItem = state.items.find(i=>i.id ===item.id);
+
+     if(existingItem){
+      existingItem.quantity += 1;
+     }
+     else{
+      state.items.push({...item , quantity: 1})
+     }
     },
 
     // Remove item completely
     removeItem: (state, action) => {
-      state.items.pop()
+      state.items = state.items.filter((item) => item.id !== action.payload);
     },
 
     // Increment quantity
     increment: (state, action) => {
+      const item = state.items.find(i=> i.id === action.payload);
+      if(item){
+        item.quantity += 1;
+      }
       
     },
     // Decrement quantity
     decrement: (state, action) => {
-    },
-
-    // Increment by custom amount
-    incrementByAmount: (state, action) => {
-    },
+      const item = state.items.find(i=> i.id === action.payload);
+      if(item){
+        item.quantity -= 1;
+      }
+    }
   },
 });
 

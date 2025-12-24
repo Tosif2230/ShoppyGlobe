@@ -42,7 +42,7 @@ const ProductItem = ({ product }) => {
         <button
           type="button"
           onClick={() => dispatch(addItem(product))}
-          className="mt-auto w-[50%] rounded-xl text-white bg-cyan-500 hover:bg-cyan-600 px-4 py-2 text-sm"
+          className="cursor-pointer mt-auto w-[50%] rounded-xl text-white bg-cyan-500 hover:bg-cyan-600 px-4 py-2 text-sm"
         >
           ADD TO CART
         </button>

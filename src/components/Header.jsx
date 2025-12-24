@@ -31,7 +31,7 @@ function Header() {
 
         {/* Cart */}
         <Link to="/cart"><div className="flex items-center cursor-pointer">
-          {cartItem.length}🛒
+          <span className="flex flex-col">{cartItem.length}🛒</span>
           <span className="font-bold ml-2">Cart</span>
         </div></Link>
       </div>
