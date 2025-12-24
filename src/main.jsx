@@ -6,6 +6,8 @@ import ProductList from "./components/ProductList.jsx";
 import ProductDetail from "./Pages/ProductDetail.jsx";
 import NotFound from "./Pages/NotFound.jsx";
 import Cart from "./components/Cart.jsx";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
 
 const routes = createBrowserRouter([
   {
@@ -34,5 +36,7 @@ const routes = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={routes} />
+  <Provider store={appStore}>
+    <RouterProvider router={routes} />
+  </Provider>
 );
