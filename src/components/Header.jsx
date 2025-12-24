@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Header() {
+  const cartItem =useSelector((store)=>store.cart.items)
   return (
     <header className="w-full sticky top-0 z-50 ">
       {/* Amazon like Header */}
@@ -29,7 +31,7 @@ function Header() {
 
         {/* Cart */}
         <Link to="/cart"><div className="flex items-center cursor-pointer">
-          🛒
+          {cartItem.length}🛒
           <span className="font-bold ml-2">Cart</span>
         </div></Link>
       </div>

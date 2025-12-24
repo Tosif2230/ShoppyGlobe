@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const ProductItem = ({ product }) => {
   const { id, title, price, rating, images, description } = product;
-
+  const dispatch = useDispatch();
+  
   return (
     <div className="h-full">
       <div className="flex flex-col h-full rounded-xl p-4 shadow-sm">
@@ -38,6 +41,7 @@ const ProductItem = ({ product }) => {
 
         <button
           type="button"
+          onClick={() => dispatch(addItem(product))}
           className="mt-auto w-[50%] rounded-xl text-white bg-cyan-500 hover:bg-cyan-600 px-4 py-2 text-sm"
         >
           ADD TO CART

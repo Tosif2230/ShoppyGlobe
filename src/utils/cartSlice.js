@@ -1,32 +1,36 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
-
-
-export const cartSlice = createSlice({
-  name: 'cart',
+const cartSlice = createSlice({
+  name: "cart",
   initialState: {
-    items: []
+    items: [],
   },
   reducers: {
-    addItem:(state,action) => {
-
+    // Add item to cart
+    addItem: (state, action) => {
+     state.items.push(action.payload);
     },
-    removeItem:(state,action) => {
 
+    // Remove item completely
+    removeItem: (state, action) => {
+      state.items.pop()
     },
+
+    // Increment quantity
     increment: (state, action) => {
-   
+      
     },
+    // Decrement quantity
     decrement: (state, action) => {
-      
     },
+
+    // Increment by custom amount
     incrementByAmount: (state, action) => {
-      
     },
   },
-})
+});
 
+export const {addItem,removeItem,increment,decrement,incrementByAmount,
+} = cartSlice.actions;
 
-export const { addItem, removeItem, increment, decrement, remove } = cartSlice.actions
-
-export default cartSlice.reducer
+export default cartSlice.reducer;
