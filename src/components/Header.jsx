@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { setSearchQuary } from "../utils/searchSlice";
+import {setSearchQuary} from '../utils/searchSlice'
 
 function Header() {
   const cartItem = useSelector((store) => store.cart.items);
@@ -30,16 +30,13 @@ function Header() {
             placeholder="Search ShoppyGlobe"
             className="flex-1 px-3 text-gray-600 bg-white"
             value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
+            onChange={(e)=>setSearchText(e.target.value)}
           />
-          <button
-            onClick={() => dispatch(setSearchQuary(searchText))}
-            className="px-4 text-white bg-orange-500 cursor-pointer"
-          >
+          <button onClick={()=>dispatch(setSearchQuary(searchText))} className="px-4 text-white bg-orange-500 cursor-pointer">
             Search
           </button>
         </div>
-
+        
         {/* Home */}
         <Link to="/">
           <div className="flex items-center cursor-pointer">
