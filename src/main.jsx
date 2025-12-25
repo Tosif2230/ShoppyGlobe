@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProductList from "./components/ProductList.jsx";
 import ProductDetail from "./Pages/ProductDetail.jsx";
+import Checkout from "./Pages/Checkout.jsx";
 import NotFound from "./Pages/NotFound.jsx";
 import Cart from "./components/Cart.jsx";
 import { Provider } from "react-redux";
@@ -29,6 +30,10 @@ const routes = createBrowserRouter([
       {
         path: "/category/:categoryName",
         element: <ProductList />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
     errorElement: <NotFound />,

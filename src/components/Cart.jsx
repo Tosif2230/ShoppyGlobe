@@ -48,9 +48,9 @@ function Cart() {
           <span className="font-semibold mx-1">${totalPrice.toFixed(2)}</span>
         </h1>
 
-        <button className="rounded-2xl text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer py-1 mb-5">
+        <Link to="/checkout"><button  className="rounded-2xl w-full text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer py-1 mb-5">
           CheckOut
-        </button>
+        </button></Link>
         <Link to="/">
           <button className="rounded-2xl text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer w-full py-1 mb-5">
           Go to Deshboard
