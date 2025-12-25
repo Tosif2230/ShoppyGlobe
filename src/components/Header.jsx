@@ -30,6 +30,13 @@ function Header() {
             Search
           </button>
         </div>
+        
+        {/* Home */}
+        <Link to="/">
+          <div className="flex items-center cursor-pointer">
+            <span className="font-bold ml-2 hover:text-cyan-500">Home</span>
+          </div>
+        </Link>
 
         {/* Cart */}
         <Link to="/cart">
