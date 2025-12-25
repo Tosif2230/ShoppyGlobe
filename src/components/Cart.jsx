@@ -1,13 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CartItem from "../Pages/CartItem";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart.items);
 
-  const totalQuantity = cartItems.reduce( (total ,item) => total + item.quantity , 0);
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
-  const totalPrice = cartItems.reduce( (total ,item) => total + item.price * item.quantity , 0);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="flex mt-5 justify-between gap-4 shadow-lg">
@@ -21,19 +28,15 @@ function Cart() {
         <hr className="text-gray-300 my-3" />
 
         {cartItems.length === 0 ? (
-          <p className="text-center text-gray-500">Your cart is empty</p>
+            <p className="text-center text-gray-500">Your cart is empty </p>
         ) : (
-          cartItems.map((item) => (
-            <CartItem key={item.id} item={item} />
-          ))
+          cartItems.map((item) => <CartItem key={item.id} item={item} />)
         )}
 
         <div className="flex justify-end">
           <h1>
             Subtotal ({totalQuantity} Items):
-            <span className="font-semibold mx-1">
-              ${totalPrice.toFixed(2)}
-            </span>
+            <span className="font-semibold mx-1">${totalPrice.toFixed(2)}</span>
           </h1>
         </div>
       </div>
@@ -42,14 +45,17 @@ function Cart() {
       <section className="shadow-lg w-[20vw] p-4 flex flex-col gap-3">
         <h1>
           Subtotal ({totalQuantity} Items):
-          <span className="font-semibold mx-1">
-            ${totalPrice.toFixed(2)}
-          </span>
+          <span className="font-semibold mx-1">${totalPrice.toFixed(2)}</span>
         </h1>
 
         <button className="rounded-2xl text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer py-1 mb-5">
           CheckOut
         </button>
+        <Link to="/">
+          <button className="rounded-2xl text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer w-full py-1 mb-5">
+          Go to Deshboard
+        </button>
+        </Link>
 
         <label className="text-sm border p-2 flex justify-between rounded">
           EMI Available:
