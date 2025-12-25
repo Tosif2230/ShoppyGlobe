@@ -1,9 +1,13 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {setSearchQuary} from '../utils/searchSlice'
 
 function Header() {
   const cartItem = useSelector((store) => store.cart.items);
+  const [searchText, setSearchText] = useState("");
+  const dispatch = useDispatch();
+
   return (
     <header className="w-full sticky top-0 z-50 ">
       {/* Amazon like Header */}
@@ -25,8 +29,10 @@ function Header() {
             type="text"
             placeholder="Search ShoppyGlobe"
             className="flex-1 px-3 text-gray-600 bg-white"
+            value={searchText}
+            onChange={(e)=>setSearchText(e.target.value)}
           />
-          <button className="px-4 text-white bg-orange-500 cursor-pointer">
+          <button onClick={()=>dispatch(setSearchQuary(searchText))} className="px-4 text-white bg-orange-500 cursor-pointer">
             Search
           </button>
         </div>
