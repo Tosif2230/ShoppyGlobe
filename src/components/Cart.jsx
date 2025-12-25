@@ -28,7 +28,7 @@ function Cart() {
         <hr className="text-gray-300 my-3" />
 
         {cartItems.length === 0 ? (
-            <p className="text-center text-gray-500">Your cart is empty </p>
+          <p className="text-center text-gray-500">Your cart is empty </p>
         ) : (
           cartItems.map((item) => <CartItem key={item.id} item={item} />)
         )}
@@ -48,13 +48,15 @@ function Cart() {
           <span className="font-semibold mx-1">${totalPrice.toFixed(2)}</span>
         </h1>
 
-        <Link to="/checkout"><button  className="rounded-2xl w-full text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer py-1 mb-5">
-          CheckOut
-        </button></Link>
+        <Link to="/checkout">
+          <button className="rounded-2xl w-full text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer py-1 mb-5">
+            CheckOut
+          </button>
+        </Link>
         <Link to="/">
           <button className="rounded-2xl text-white bg-cyan-500 hover:bg-cyan-600 shadow-sm cursor-pointer w-full py-1 mb-5">
-          Go to Deshboard
-        </button>
+            Go to Deshboard
+          </button>
         </Link>
 
         <label className="text-sm border p-2 flex justify-between rounded">

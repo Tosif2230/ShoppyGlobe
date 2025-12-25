@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function ProductList() {
-  const {categoryName} = useParams()
-  const searchQuary = useSelector((store)=>store.search.quary);
+  const { categoryName } = useParams();
+  const searchQuary = useSelector((store) => store.search.quary);
 
   //fetch Products by Hooks
   const { product, error, loading } = useFetchProduct(
@@ -16,7 +16,7 @@ function ProductList() {
   if (loading) {
     return <p className="text-center">Loading...</p>;
   }
-  
+
   if (error) {
     return <p className="text-center">Error in Loading..{error.message}</p>;
   }
@@ -24,12 +24,15 @@ function ProductList() {
   let filteredProducts = product.products;
 
   // Use for Category Filter
-  if (categoryName){
-    filteredProducts = filteredProducts.filter((item) => item.category === categoryName)
+  if (categoryName) {
+    filteredProducts = filteredProducts.filter(
+      (item) => item.category === categoryName
+    );
   }
   // Use for Search Filter
-  if (searchQuary){
-    filteredProducts = filteredProducts.filter((item) => item.title.toLowerCase().includes(searchQuary)
+  if (searchQuary) {
+    filteredProducts = filteredProducts.filter((item) =>
+      item.title.toLowerCase().includes(searchQuary)
     );
   }
   //  No product found
@@ -39,11 +42,11 @@ function ProductList() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 m-2">
-          {filteredProducts.map((product) => (
-            <ProductItem key={product.id} product={product} />
-          ))}
-        </div>
-  )
+      {filteredProducts.map((product) => (
+        <ProductItem key={product.id} product={product} />
+      ))}
+    </div>
+  );
 }
 
 export default ProductList;

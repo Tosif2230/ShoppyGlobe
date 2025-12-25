@@ -15,14 +15,20 @@ function ProductDetail() {
   }
 
   if (error) {
-    return <p className="text-center mt-10">Error in Loading..{error.message}</p>;
+    return (
+      <p className="text-center mt-10">Error in Loading..{error.message}</p>
+    );
   }
-  console.log(product)
+  console.log(product);
   return (
     <div className="flex gap-6 m-4 p-4 rounded-lg">
       {/* Image Section */}
       <figure className="w-1/3 flex justify-center shadow-sm">
-        <img className="h-80 object-contain cursor-zoom-in" src={product.images?.[0]} alt={product.title} />
+        <img
+          className="h-80 object-contain cursor-zoom-in"
+          src={product.images?.[0]}
+          alt={product.title}
+        />
       </figure>
 
       {/* Title section */}
@@ -30,7 +36,9 @@ function ProductDetail() {
         <h1 className="text-2xl font-semibold">{product.title}</h1>
         <p className="font-medium">Brand: {product.brand}</p>
         <p className="font-medium">Category: {product.category}</p>
-        <p className="text-sm text-gray-600">Availability: {product.availabilityStatus}</p>
+        <p className="text-sm text-gray-600">
+          Availability: {product.availabilityStatus}
+        </p>
 
         {/*Rating*/}
         <div className="flex items-center gap-1 mt-2">
@@ -46,10 +54,12 @@ function ProductDetail() {
           <span className="text-sm">{product.rating}</span>
         </div>
         <hr className="text-gray-300 my-3" />
-         <p className="text-sm mt-2 text-gray-700">{product.description}</p>
-        <p className="text-sm mt-2 text-gray-700">{product.warrantyInformation}</p>
+        <p className="text-sm mt-2 text-gray-700">{product.description}</p>
+        <p className="text-sm mt-2 text-gray-700">
+          {product.warrantyInformation}
+        </p>
         <p className="text-xl font-semibold mt-3">Price: ${product.price}</p>
-         <p className="text-sm text-green-600">
+        <p className="text-sm text-green-600">
           Discount: {product.discountPercentage}%
         </p>
       </div>
@@ -58,11 +68,13 @@ function ProductDetail() {
       <div className="w-1/4 border border-gray-300 rounded-lg p-4 flex flex-col gap-3">
         <p className="text-xl font-semibold mx-2">Price: ${product.price}</p>
         <p className="text-xs mx-3 text-gray-600">{product.returnPolicy}</p>
-        <p className="text-xs mx-3 text-gray-600">{product.shippingInformation}</p>
+        <p className="text-xs mx-3 text-gray-600">
+          {product.shippingInformation}
+        </p>
 
         <button
           type="button"
-          onClick={()=>dispatch(addItem(product))}
+          onClick={() => dispatch(addItem(product))}
           className="m-1 p-1 cursor-pointer rounded-2xl text-sm text-white bg-cyan-500 hover:bg-cyan-600"
         >
           ADD TO CART
