@@ -44,6 +44,12 @@ function Header() {
           </div>
         </Link>
 
+        {/*Account*/}
+        <Link to="/account">
+          <div className="flex items-center cursor-pointer">
+            <span className="font-bold ml-2 hover:text-cyan-500">Account</span>
+          </div>
+        </Link>
         {/* Cart */}
         <Link to="/cart">
           <div className="flex items-center cursor-pointer">

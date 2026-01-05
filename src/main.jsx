@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
 import { lazy, Suspense } from "react";
+import Account from "./components/Account.jsx";
 
 const ProductList = lazy(() => import("./components/ProductList.jsx"));
 const ProductDetail = lazy(() => import("./Pages/ProductDetail.jsx"));
@@ -24,6 +25,10 @@ const routes = createBrowserRouter([
       {
         path: "/product/:id",
         element: <ProductDetail />,
+      },
+      {
+        path: "/account",
+        element: <Account/>,
       },
       {
         path: "/cart",
